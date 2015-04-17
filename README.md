@@ -1,2 +1,2 @@
 # docker-host-scripts
-Script we use for administration of my docker host
+Scripts we use for administration of my docker host
