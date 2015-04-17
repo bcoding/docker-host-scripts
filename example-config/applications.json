@@ -1,0 +1,23 @@
+[
+    {
+        "vhost_name": "pypi",
+	"docker_container_name": "pypi"
+    },
+    {
+        "vhost_name": "gitlab",
+	"docker_container_name": "gitlab",
+	"docker_container_port": 80
+    },
+    {
+        "vhost_name": "jenkins",
+	"docker_container_name": "jenkins"
+    },
+    {
+        "vhost_name": "jira",
+	"docker_container_name": "jira"
+    },
+    {
+        "vhost_name": "docker_registry",
+	"docker_container_name": "docker_registry"
+    }
+]

@@ -1,0 +1,52 @@
+{
+    "docker_registry": {
+        "domains": [
+            "docker.bcoding.de"
+        ], 
+        "flags": {
+            "htpasswd_file": "/etc/nginx/docker.htpasswd", 
+            "location_extra": "proxy_set_header  Authorization  '';", 
+            "server_config_extra": "chunkin on; error_page 411 = @my_411_error; location @my_411_error { chunkin_resume; }", 
+            "uploadLimit": "0"
+        }, 
+        "host": "asdf", 
+        "ip_addr": "172.17.0.13", 
+        "port": 5000
+    }, 
+    "jenkins": {
+        "domains": [
+            "ci.bcoding.de"
+        ], 
+        "flags": {
+            "htpasswd_file": "/etc/nginx/docker.htpasswd", 
+            "location_extra": "proxy_redirect http:// https://; proxy_set_header  X-Forwarded-Proto https;", 
+            "uploadLimit": "0"
+        }, 
+        "host": "asdf", 
+        "ip_addr": "172.17.0.33", 
+        "port": 8080
+    }, 
+    "jira": {
+        "domains": [
+            "jira.bcoding.de"
+        ], 
+        "flags": {
+            "location_extra": "add_header 'Access-Control-Allow-Origin' 'https://docs.bcoding.de'; add_header 'Access-Control-Allow-Credentials' 'true'; add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';"
+        }, 
+        "host": "asdf", 
+        "ip_addr": "172.17.0.4", 
+        "port": 8080
+    }, 
+    "pypi": {
+        "domains": [
+            "pypi.bcoding.de"
+        ], 
+        "flags": {
+            "allow_http": true, 
+            "htpasswd_file": "/etc/nginx/pypi.htpasswd"
+        }, 
+        "host": "asdf", 
+        "ip_addr": "172.17.0.21", 
+        "port": 80
+    }
+}
